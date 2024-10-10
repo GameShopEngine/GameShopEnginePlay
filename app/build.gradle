@@ -1,8 +1,11 @@
 plugins {
     alias(libs.plugins.android.application)
+    // id 'application'
 }
 
+
 android {
+
     namespace 'com.gameshopcorp.gameshopengine'
     compileSdk 34
 
@@ -13,23 +16,101 @@ android {
         versionCode 1
         versionName "1.0"
 
+        multiDexEnabled=true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
+
+//        javaexec {
+
+
+        //applicationDefaultJvmArgs = ["-d64"]
+
+//           TaskProvider<JavaExec> runapp = tasks.register('runApp', JavaExec)  {
+//               //println "" + getMainClass()
+//              // mainClass = "com.gameshopcorp.gameshopengine.MainActivity"
+//               //classpath = getClassPath()
+//                println "RAN APPLICATION"
+//                 List<String> argumentList = new ArrayList<String>();
+//                argumentList.add('-Xms12288m')
+//                argumentList.add('-Xmx14336m')
+//                allJvmArgs = argumentList
+//             }
+//            runapp.get().exec()
+        }
+   // }
 
     buildTypes {
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//            configureEach {
+//
+//                jvmArgs '-d64 -Xms12288m -Xmx14336m'
+//
+//         }
+
         }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+//        task("runapp") -> {
+//
+//
+//        }
+//                   TaskProvider<JavaExec> runapp = tasks.register('runApp', JavaExec)  {
+//               println "" + getMainClass()
+//
+//                       mainClass = getMainClass()
+//               classpath = getClasspath()
+//                println "RAN APPLICATION"
+//                 List<String> argumentList = new ArrayList<String>();
+//                argumentList.add('-Xms12288m')
+//                argumentList.add('-Xmx14336m')
+//                allJvmArgs = argumentList
+//             }
+//            runapp.get().exec()
     }
+
+
 }
 
-dependencies {
+//tasks.withType(JavaCompile).configureEach {
+//
+//   // configure(options.forkOptions) {
+//
+//        jvmArgs['-Xms12288m', '-Xmx14336m']
+//    //}
+//}
 
+// tasks.register('runApp', JavaExec) {
+//    group = 'android'
+//    description = 'Runs the APK file'
+//    classpath = getClasspath()//files(tasks.jar.outputs.files)
+////    mainClass = 'com.gameshopcorp.Main'
+//    println "RAN APPLICATION"
+//     List<String> argumentList = new ArrayList<String>();
+//    argumentList.add('-Xms12288m')
+//    argumentList.add('-Xmx14336m')
+//    allJvmArgs = argumentList
+//}
+//
+//afterEvaluate {
+//    tasks.named("compileDebugJavaWithJavac").dependsOn "runApp"
+//}
+
+//tasks.whenTaskAdded { theTask ->
+//    def taskName = theTask.name.toString()
+//    if ("preBuild".toString().equals(taskName)) {
+//        println "RAN APPLICATION"
+//        theTask.j
+//        theTask.jvmArgs('-ea', '-noverify')
+//    }
+//}
+
+
+dependencies {
+    implementation "androidx.multidex:multidex:2.0.1"
     implementation libs.jme3
 //    implementation libs.jme3.lwjgl
     implementation libs.appcompat

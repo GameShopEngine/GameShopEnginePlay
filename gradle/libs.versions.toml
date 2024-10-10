@@ -8,6 +8,8 @@ material = "1.10.0"
 activity = "1.8.0"
 constraintlayout = "2.1.4"
 jmeVer = "3.6.1-stable"
+
+
 [libraries]
 jme3 = {group = "org.jmonkeyengine", name="jme3-android-native", version.ref="jmeVer"}
 #jme3-lwjgl = {group = "org.jmonkeyengine", name="jme3-lwjgl3", version.ref="jmeVer"}
