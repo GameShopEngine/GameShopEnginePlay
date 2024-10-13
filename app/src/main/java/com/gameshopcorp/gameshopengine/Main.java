@@ -3,6 +3,7 @@ package com.gameshopcorp.gameshopengine;
 import com.jme3.app.SimpleApplication;
 import com.jme3.material.Material;
 import com.jme3.math.ColorRGBA;
+import com.jme3.math.Vector2f;
 import com.jme3.math.Vector3f;
 import com.jme3.math.Vector4f;
 import com.jme3.renderer.RenderManager;
@@ -44,7 +45,7 @@ public class Main extends SimpleApplication {
         //System.out.println("Max Texture size: " + GL11.glGetInteger(GL11.GL_MAX_TEXTURE_SIZE));
 
         this.viewPort.setBackgroundColor(ColorRGBA.White);
-        int n = 1;
+        int n = 25;
         GameShopCurrencyMesh[] cms = new GameShopCurrencyMesh[n];
         for (int i = 0; i < n; i++){
             byte depth = 2;
@@ -56,10 +57,10 @@ public class Main extends SimpleApplication {
                     new GameShopCurrencyLine(new Vector3f[]{new Vector3f(0,.66f,-i), new Vector3f(.33f, .66f, -i), new Vector3f(.66f,.66f,-i), new Vector3f(1, .66f, -i)}, depth),
                     new GameShopCurrencyLine(new Vector3f[]{new Vector3f(0,1,-i), new Vector3f(.33f, 1, -i), new Vector3f(.66f,1,-i), new Vector3f(1, 1, -i)}, depth),
 
-                    new GameShopCurrencyLine(new Vector3f[]{new Vector3f(1,0,-i), new Vector3f(1.33f, 0, -i), new Vector3f(1.66f,0,-i), new Vector3f(2, 0, -i)}, depth),
-                    new GameShopCurrencyLine(new Vector3f[]{new Vector3f(1,.33f,-i), new Vector3f(1.33f, .33f, -i), new Vector3f(1.66f,.33f,-i), new Vector3f(2, .33f, -i)}, depth),
-                    new GameShopCurrencyLine(new Vector3f[]{new Vector3f(1,.66f,-i), new Vector3f(1.33f, .66f, -i), new Vector3f(1.66f,.66f,-i), new Vector3f(2, .66f, -i)}, depth),
-                    new GameShopCurrencyLine(new Vector3f[]{new Vector3f(1,1,-i), new Vector3f(1.33f, 1, -i), new Vector3f(1.66f,1,-i), new Vector3f(2, 1, -i)}, depth)
+//                    new GameShopCurrencyLine(new Vector3f[]{new Vector3f(1,0,-i), new Vector3f(1.33f, 0, -i), new Vector3f(1.66f,0,-i), new Vector3f(2, 0, -i)}, depth),
+//                    new GameShopCurrencyLine(new Vector3f[]{new Vector3f(1,.33f,-i), new Vector3f(1.33f, .33f, -i), new Vector3f(1.66f,.33f,-i), new Vector3f(2, .33f, -i)}, depth),
+//                    new GameShopCurrencyLine(new Vector3f[]{new Vector3f(1,.66f,-i), new Vector3f(1.33f, .66f, -i), new Vector3f(1.66f,.66f,-i), new Vector3f(2, .66f, -i)}, depth),
+//                    new GameShopCurrencyLine(new Vector3f[]{new Vector3f(1,1,-i), new Vector3f(1.33f, 1, -i), new Vector3f(1.66f,1,-i), new Vector3f(2, 1, -i)}, depth)
 
 
             };
@@ -87,6 +88,7 @@ public class Main extends SimpleApplication {
 //
 //         GeometryBatchFactory.optimize(getRootNode());
 
+
         long maxMemory = Runtime.getRuntime().maxMemory();
         long allocatedMemory = Runtime.getRuntime().totalMemory();
         long freeMemory = Runtime.getRuntime().freeMemory();
@@ -109,7 +111,7 @@ public class Main extends SimpleApplication {
 
     public Texture2D makeTexture(String side){
         GameShopLayer layer= new GameShopLayer((short) 128, (short) 128);
-        layer.drawCircle((short) 63, (short) 63, (short) 63, ColorRGBA.fromRGBA255(255,215,175,255));
+        layer.drawCircle((short) 64, (short) 64, (short) 64, ColorRGBA.fromRGBA255(255,215,175,255));
 
         //DRILL COLOR CODE
         // layer.drawCircle((short) 63, (short) 63, (short) 128, ColorRGBA.fromRGBA255(0,0,0,255));

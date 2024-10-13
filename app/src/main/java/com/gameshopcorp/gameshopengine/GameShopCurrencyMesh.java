@@ -80,7 +80,8 @@ public class GameShopCurrencyMesh {
      int totalVertices = 0;
           
           for (GameShopCurrencyLine gscl: vInfinitesimals){
-          
+
+             // System.out.println(totalVertices);
               totalVertices += gscl.infinitesimals.length;
           }
           
@@ -96,8 +97,8 @@ public class GameShopCurrencyMesh {
               }
           }
           
-          System.out.println(vertices.length);
-          System.out.println(Arrays.asList(vertices));
+         // System.out.println(vertices.length);
+         // System.out.println(Arrays.asList(vertices));
     }
     
     public void setIndicesVertical(){
@@ -113,7 +114,7 @@ public class GameShopCurrencyMesh {
             }
         }
         
-        System.out.println("totalIndices: " + totalIndices);
+       // System.out.println("totalIndices: " + totalIndices);
         indices = new Short[totalIndices];
         
         int i = 0;
@@ -155,8 +156,8 @@ public class GameShopCurrencyMesh {
         }
         }
    
-          System.out.println(indices.length);
-          System.out.println(Arrays.asList(indices));
+        //  System.out.println(indices.length);
+        //  System.out.println(Arrays.asList(indices));
         
     }
     
@@ -184,8 +185,8 @@ public class GameShopCurrencyMesh {
  
                     }
         
-          System.out.println(texCoord.length);
-          System.out.println(Arrays.asList(texCoord));
+         // System.out.println(texCoord.length);
+         // System.out.println(Arrays.asList(texCoord));
         
     }
      
@@ -240,29 +241,44 @@ for (int j = 0; j < indices.length; j++) {
        // this.vInfinitesimals = new GameShopPolyLine[((polyLines[0].numPoints - 2) * 2) + 2];//[polyLines[0].infinitesimals.length];
        
        int totalInfinitesimals = 0;
-       System.out.println("cl inf " + currencyLines[0].infinitesimals.length);
+       //System.out.println("cl inf " + currencyLines[0].infinitesimals.length);
        for (int lines = 0; lines < currencyLines.length; lines += 4){
-       
+
            totalInfinitesimals += currencyLines[lines].infinitesimals.length;
-           
+
        }
+
+//        int lines = 0;
+//        while (lines < currencyLines.length){
+//            totalInfinitesimals += currencyLines[lines].infinitesimals.length;
+//
+//
+//        }
        
        
        this.vInfinitesimals = new GameShopCurrencyLine[totalInfinitesimals];//new GameShopCurrencyLine[(currencyLines[0].infinitesimals.length)];//[polyLines[0].infinitesimals.length];
  
-        System.out.println("vInfinitesimals " + this.vInfinitesimals.length);
+       // System.out.println("vInfinitesimals " + this.vInfinitesimals.length);
         
         int j = 0;
         int i = 0;
         int total = 0;
         for (GameShopCurrencyLine vi: this.vInfinitesimals){
-        
-             if (i == 3){
+
+//            if (total == this.vInfinitesimals.length - 1){
+//
+//                break;
+//            }
+             if (i == currencyLines[j].infinitesimals.length){
             
                 i = 0;
                 j+=4;
             }
             // System.out.println();
+//            System.out.println(i);
+//            System.out.println(j);
+//            System.out.println(total);
+
             this.vInfinitesimals[total] = new GameShopCurrencyLine(new Vector3f[]{currencyLines[j].infinitesimals[i], currencyLines[j + 1].infinitesimals[i], currencyLines[j + 2].infinitesimals[i], currencyLines[j + 3].infinitesimals[i]}, (byte) currencyLines[j].infinitesimals.length);
         
             i++;
