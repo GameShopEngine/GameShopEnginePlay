@@ -62,10 +62,10 @@ public class Main extends SimpleApplication {
                     new GameShopCurrencyLine(new Vector3f[]{new Vector3f(0,.66f,-i), new Vector3f(.33f, .66f, -i), new Vector3f(.66f,.66f,-i), new Vector3f(1, .66f, -i)}, depth),
                     new GameShopCurrencyLine(new Vector3f[]{new Vector3f(0,1,-i), new Vector3f(.33f, 1, -i), new Vector3f(.66f,1,-i), new Vector3f(1, 1, -i)}, depth),
 
-                    new GameShopCurrencyLine(new Vector3f[]{new Vector3f(1,0,-i), new Vector3f(1.33f, 0, -i), new Vector3f(1.66f,0,-i), new Vector3f(2, 0, -i)}, depth),
-                    new GameShopCurrencyLine(new Vector3f[]{new Vector3f(1,.33f,-i), new Vector3f(1.33f, .33f, -i), new Vector3f(1.66f,.33f,-i), new Vector3f(2, .33f, -i)}, depth),
-                    new GameShopCurrencyLine(new Vector3f[]{new Vector3f(1,.66f,-i), new Vector3f(1.33f, .66f, -i), new Vector3f(1.66f,.66f,-i), new Vector3f(2, .66f, -i)}, depth),
-                    new GameShopCurrencyLine(new Vector3f[]{new Vector3f(1,1,-i), new Vector3f(1.33f, 1, -i), new Vector3f(1.66f,1,-i), new Vector3f(2, 1, -i)}, depth)
+//                    new GameShopCurrencyLine(new Vector3f[]{new Vector3f(1,0,-i), new Vector3f(1.33f, 0, -i), new Vector3f(1.66f,0,-i), new Vector3f(2, 0, -i)}, depth),
+//                    new GameShopCurrencyLine(new Vector3f[]{new Vector3f(1,.33f,-i), new Vector3f(1.33f, .33f, -i), new Vector3f(1.66f,.33f,-i), new Vector3f(2, .33f, -i)}, depth),
+//                    new GameShopCurrencyLine(new Vector3f[]{new Vector3f(1,.66f,-i), new Vector3f(1.33f, .66f, -i), new Vector3f(1.66f,.66f,-i), new Vector3f(2, .66f, -i)}, depth),
+//                    new GameShopCurrencyLine(new Vector3f[]{new Vector3f(1,1,-i), new Vector3f(1.33f, 1, -i), new Vector3f(1.66f,1,-i), new Vector3f(2, 1, -i)}, depth)
 
 
             };
