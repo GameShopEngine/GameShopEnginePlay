@@ -224,7 +224,7 @@ for (int j = 0; j < indices.length; j++) {
         mat.getAdditionalRenderState().setFaceCullMode(RenderState.FaceCullMode.Off);
         mat.getAdditionalRenderState().setBlendMode(RenderState.BlendMode.Alpha);
         // mat.setColor("Color", ColorRGBA.fromRGBA255(255,255,255,255));
-        mat.setTexture("ColorMap", makeTexture(""));
+        mat.setTexture("ColorMap", atms.makeTexture());
         geom.setMaterial(mat);
         //geom.getMesh().scaleTextureCoordinates(new Vector2f(2, 2));
 
@@ -301,24 +301,24 @@ for (int j = 0; j < indices.length; j++) {
       //  }
     }
     
-      public Texture2D makeTexture(String side){
-          //16384
-          //8192
-          //4096
-          //2048
-          //1024
-          //512
-        GameShopLayer layer= new GameShopLayer((short) 1024, (short) 1024);
-        layer.drawCircle((short) 512, (short) 512, (short) 512, ColorRGBA.fromRGBA255(255,215,175,255));
-
-        //DRILL COLOR CODE
-        // layer.drawCircle((short) 63, (short) 63, (short) 128, ColorRGBA.fromRGBA255(0,0,0,255));
-
-        ATMS atms = new ATMS((byte) 1, layer);
-        //atmsFront.frames[0] = layerFront;
-        ByteBuffer data = BufferUtils.createByteBuffer(atms.frames[0].outputLayer());
-        // ByteBuffer data = BufferUtils.createByteBuffer((byte)0,(byte)127,(byte)0,(byte)62);
-        Image image = new Image(Image.Format.RGBA8 , 1024, 1024, data, ColorSpace.Linear);
-        return new Texture2D(image);
-    }
+//      public Texture2D makeTexture(String side){
+//          //16384
+//          //8192
+//          //4096
+//          //2048
+//          //1024
+//          //512
+//        GameShopLayer layer= new GameShopLayer((short) 1024, (short) 1024);
+//        layer.drawCircle((short) 512, (short) 512, (short) 512, ColorRGBA.fromRGBA255(255,215,175,255));
+//
+//        //DRILL COLOR CODE
+//        // layer.drawCircle((short) 63, (short) 63, (short) 128, ColorRGBA.fromRGBA255(0,0,0,255));
+//
+//        ATMS atms = new ATMS((byte) 1, layer);
+//        //atmsFront.frames[0] = layerFront;
+//        ByteBuffer data = BufferUtils.createByteBuffer(atms.frames[0].outputLayer());
+//        // ByteBuffer data = BufferUtils.createByteBuffer((byte)0,(byte)127,(byte)0,(byte)62);
+//        Image image = new Image(Image.Format.RGBA8 , 1024, 1024, data, ColorSpace.Linear);
+//        return new Texture2D(image);
+//    }
 }

@@ -45,6 +45,11 @@ public class Main extends SimpleApplication {
         //System.out.println("Max Texture size: " + GL11.glGetInteger(GL11.GL_MAX_TEXTURE_SIZE));
 
         this.viewPort.setBackgroundColor(ColorRGBA.White);
+
+        GameShopATMS gameShopATMS = new GameShopATMS( new GameShopLayer((short)128,(short)128), new Vector4f[]{new Vector4f(0,1,0,1)});
+
+        gameShopATMS.layer.drawCircle((short) 63, (short) 63, (short) 63, ColorRGBA.fromRGBA255(0,0,0,255));;
+
         int n = 25;
         GameShopCurrencyMesh[] cms = new GameShopCurrencyMesh[n];
         for (int i = 0; i < n; i++){
@@ -57,15 +62,15 @@ public class Main extends SimpleApplication {
                     new GameShopCurrencyLine(new Vector3f[]{new Vector3f(0,.66f,-i), new Vector3f(.33f, .66f, -i), new Vector3f(.66f,.66f,-i), new Vector3f(1, .66f, -i)}, depth),
                     new GameShopCurrencyLine(new Vector3f[]{new Vector3f(0,1,-i), new Vector3f(.33f, 1, -i), new Vector3f(.66f,1,-i), new Vector3f(1, 1, -i)}, depth),
 
-//                    new GameShopCurrencyLine(new Vector3f[]{new Vector3f(1,0,-i), new Vector3f(1.33f, 0, -i), new Vector3f(1.66f,0,-i), new Vector3f(2, 0, -i)}, depth),
-//                    new GameShopCurrencyLine(new Vector3f[]{new Vector3f(1,.33f,-i), new Vector3f(1.33f, .33f, -i), new Vector3f(1.66f,.33f,-i), new Vector3f(2, .33f, -i)}, depth),
-//                    new GameShopCurrencyLine(new Vector3f[]{new Vector3f(1,.66f,-i), new Vector3f(1.33f, .66f, -i), new Vector3f(1.66f,.66f,-i), new Vector3f(2, .66f, -i)}, depth),
-//                    new GameShopCurrencyLine(new Vector3f[]{new Vector3f(1,1,-i), new Vector3f(1.33f, 1, -i), new Vector3f(1.66f,1,-i), new Vector3f(2, 1, -i)}, depth)
+                    new GameShopCurrencyLine(new Vector3f[]{new Vector3f(1,0,-i), new Vector3f(1.33f, 0, -i), new Vector3f(1.66f,0,-i), new Vector3f(2, 0, -i)}, depth),
+                    new GameShopCurrencyLine(new Vector3f[]{new Vector3f(1,.33f,-i), new Vector3f(1.33f, .33f, -i), new Vector3f(1.66f,.33f,-i), new Vector3f(2, .33f, -i)}, depth),
+                    new GameShopCurrencyLine(new Vector3f[]{new Vector3f(1,.66f,-i), new Vector3f(1.33f, .66f, -i), new Vector3f(1.66f,.66f,-i), new Vector3f(2, .66f, -i)}, depth),
+                    new GameShopCurrencyLine(new Vector3f[]{new Vector3f(1,1,-i), new Vector3f(1.33f, 1, -i), new Vector3f(1.66f,1,-i), new Vector3f(2, 1, -i)}, depth)
 
 
             };
 
-            cms[i] = new GameShopCurrencyMesh(this, cl, new GameShopATMS(new GameShopLayer[]{ new GameShopLayer((short)128,(short)128)}, new Vector4f[]{new Vector4f(1,1,1,1)}),this.getRootNode());
+            cms[i] = new GameShopCurrencyMesh(this, cl, gameShopATMS,this.getRootNode());
             //SimpleMesh sm = new SimpleMesh(this, new Vector3f[]{}, new Vector2f[]{}, makeTexture(), this.getRootNode());
         }
 //
